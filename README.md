@@ -4,5 +4,5 @@ directory. Then:
 
     make -f ../homepage-build/build.Makefile
 
-(sorry for the hardcoded path in the makefile, that will be fixed at some
-point, when we figure out how to do it properly. PRs appreciated)
+(Sorry for the hardcoded path in the Makefile, that will be fixed at some
+point. When we figure out how to do it properly. PRs appreciated)
