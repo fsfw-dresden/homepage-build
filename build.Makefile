@@ -1,5 +1,5 @@
 # fixme...
-RENDER = ../homepage-build/render.py
+RENDER ?= ../homepage-build/render.py
 HTMLS = $(wildcard *.html)
 DEST = docroot
 DESTHTMLS = $(addprefix $(DEST)/,$(HTMLS))
