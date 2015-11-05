@@ -25,8 +25,7 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "output",
-        type=argparse.FileType("w"),
+        "output"
     )
 
     args = parser.parse_args()
@@ -35,5 +34,5 @@ if __name__ == "__main__":
     env = jinja2.Environment(loader=loader)
 
     tpl = env.get_template(str(args.template))
-    with args.output as f:
+    with open(args.output, "w", encoding="utf-8") as f:
         f.write(tpl.render())
