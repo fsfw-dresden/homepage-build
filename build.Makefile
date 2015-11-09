@@ -9,7 +9,7 @@ build: $(DESTHTMLS)
 	echo 'done'
 
 install: $(DESTHTMLS)
-	rsync -raHEAXSP $(DEST)/ $(INSTALLTO)/
+	rsync -raHEAXSP --delete $(DEST)/ $(INSTALLTO)/
 
 $(DESTHTMLS): $(DEST)/%.html: %.html
 	$(RENDER) $(RENDERFLAGS) $< $@
