@@ -3,6 +3,7 @@ RENDER ?= ../homepage-build/render.py
 HTMLS = $(wildcard *.html)
 DEST = docroot
 DESTHTMLS = $(addprefix $(DEST)/,$(HTMLS))
+RENDERFLAGS =
 
 build: $(DESTHTMLS)
 	echo 'done'
@@ -11,7 +12,7 @@ install: $(DESTHTMLS)
 	rsync -raHEAXSP $(DEST)/ $(INSTALLTO)/
 
 $(DESTHTMLS): $(DEST)/%.html: %.html
-	$(RENDER) $< $@
+	$(RENDER) $(RENDERFLAGS) $< $@
 
 clean:
 	rm -f $(DESTHTMLS)
